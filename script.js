@@ -27,8 +27,7 @@ function handleMove(cellIndex) {
 }
 
 function togglePlayer() {
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    updateStatus();
+    
     for (let i = 0; i < winPatterns.length; i++) {
         const [a, b, c] = winPatterns[i];
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
@@ -41,6 +40,8 @@ function togglePlayer() {
         gameActive = false;
         statusDisplay.innerText = "Empate!!";
     }
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    updateStatus();
 }
 
 function checkResult() {
